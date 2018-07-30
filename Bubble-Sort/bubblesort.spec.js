@@ -18,6 +18,6 @@ describe('Bubble Sort', function() {
   it('swaps with an unsorted list with len > 2', function() {
     let test = [3, 2, 1, 0];
     expect(bubbleSort(test)).toEqual([0, 1, 2, 3]);
-    expect(window.swap.calls.count()).toEqual(6);
+    expect(window.swap.calls.count()).toEqual(7);
   });
 });
