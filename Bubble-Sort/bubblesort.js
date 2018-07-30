@@ -1,7 +1,9 @@
 function bubbleSort(array) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] > array[i + 1]) {
-      array = swap(array[i], array[i + 1], array);
+    for (let j = 0; j < array.length - 1; j++) {
+      if (array[i] > array[i + 1]) {
+        array = swap(i, i + 1, array);
+      }
     }
   }
   return array;
