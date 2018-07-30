@@ -14,7 +14,10 @@ describe("Split Array function", function() {
 });
 
 describe("Merge function", function() {
-  it("is able to merge two sorted arrays into one sorted array", function() {
-    // test the merging algorithm
+  // it("is able to merge two sorted arrays into one sorted array", function() {
+  //   // test the merging algorithm
+  // });
+  it("split given an array of 3 elements returns two arrays", function() {
+    expect(merge([1, 2], [3])).toEqual([1, 2, 3]);
   });
 });
