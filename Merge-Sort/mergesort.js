@@ -6,7 +6,9 @@ function split(wholeArray) {
   return [firstHalf, secondHalf];
 }
 
-function merge(array) {}
+function merge(array1, array2) {
+  return [...array1, ...array2];
+}
 
 function mergeSort(array) {
   /* your code here */
