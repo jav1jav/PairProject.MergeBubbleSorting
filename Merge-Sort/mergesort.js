@@ -7,21 +7,21 @@ function split (wholeArray) {
 
 function merge (array1, array2) {
   let retArr = [];
-  let index1 = 0;
-  let index2 = 0;
-  while (index1 < array1.length && index2 < array2.length) {
-    if (array1[index1] < array2[index2]) {
-      retArr.push(array1[index1]);
-      index1++;
+  let i = 0;
+  let k = 0;
+  while (i < array1.length && k < array2.length) {
+    if (array1[i] < array2[k]) {
+      retArr.push(array1[i]);
+      i++;
     } else {
-      retArr.push(array2[index2]);
-      index2++;
+      retArr.push(array2[k]);
+      k++;
     }
   }
-  if (index1 < array1.length) {
-    retArr = retArr.concat(array1.slice(index1));
+  if (i < array1.length) {
+    retArr = retArr.concat(array1.slice(i));
   } else {
-    retArr = retArr.concat(array2.slice(index2));
+    retArr = retArr.concat(array2.slice(k));
   }
   return retArr;
 }
