@@ -17,3 +17,5 @@ function swap(index1, index2, array) {
 function compare(item1, item2) {
   //return item1 < item2 ?  : swap(item1, item2);
 }
+
+// test comment
