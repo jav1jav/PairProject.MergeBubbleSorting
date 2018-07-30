@@ -6,11 +6,12 @@ function split(wholeArray) {
 }
 
 function merge(array1, array2) {
-  const retArr = [];
+  let retArr = [];
   let index1 = 0;
   let index2 = 0;
-
-  while (index1 < array1.length && index2 < index2.length) {
+  console.log('main => arr1', array1, 'arr2', array2);
+  while (index1 < array1.length && index2 < array2.length) {
+    console.log('concat => array1[' + index1 + ']: ' + array1[index1] + ' array2[' + index2 + ']: ' + array2[index2] + ' retArr: ' + retArr);
     if (array1[index1] < array2[index2]) {
       retArr.push(array1[index1]);
       index1++;
@@ -19,28 +20,35 @@ function merge(array1, array2) {
       index2++;
     }
   }
+  console.log('concat => array1[' + index1 + ']: ' + array1[index1] + ' array2[' + index2 + ']: ' + array2[index2] + ' retArr: ' + retArr);
+  if (index1 < array1.length) {
+    retArr = retArr.concat(array1.slice(index1));
+  } else {
+    retArr = retArr.concat(array2.slice(index2));
+  }
+  console.log('end', retArr)
   return retArr;
 }
 
-[1, 3, 4] [2, 5, 6]
-         ^
-              ^
-[1, 2, 3, 4]
+// [1, 3, 4] [2, 5, 6]
+//          ^
+//               ^
+// [1, 2, 3, 4]
 
-[2, 5, 6] [1, 3, 4]
-                   ^
-    ^
-[1, 2, 3, 4]
-
-
+// [2, 5, 6] [1, 3, 4]
+//                    ^
+//     ^
+// [1, 2, 3, 4]
 
 
-function swap(index1, index2, array) {
-  let temp = array[index1];
-  array[index1] = array[index2];
-  array[index2] = temp;
-  return array;
-}
+
+
+// function swap(index1, index2, array) {
+//   let temp = array[index1];
+//   array[index1] = array[index2];
+//   array[index2] = temp;
+//   return array;
+// }
 
 function mergeSort(array) {
   /* your code here */
