@@ -32,6 +32,13 @@ function mergeSort (array) {
   //until we have single element arrays
   //merge the single element arrays into 2 element arrays
   //merge the 2-element arrays into 4 element arrays
+  const splitArr = split(array);
+  let sortedArr1 = splitArr[0];
+  let sortedArr2 = splitArr[1];
 
-
+  if (sortedArr1.length > 1) {
+    sortedArr1 = mergeSort(sortedArr1);
+    sortedArr2 = mergeSort(sortedArr2);
+  }
+  return merge(sortedArr1, sortedArr2);
 }

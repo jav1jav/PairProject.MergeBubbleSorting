@@ -14,9 +14,6 @@ describe("Split Array function", function() {
 });
 
 describe("Merge function", function() {
-  // it("is able to merge two sorted arrays into one sorted array", function() {
-  //   // test the merging algorithm
-  // });
   it("merges two empty arrays", function() {
     expect(merge([], [])).toEqual([]);
   });
@@ -45,6 +42,32 @@ describe("Merge function", function() {
     expect(merge([2, 3], [1, 5, 6])).toEqual([1, 2, 3, 5, 6]);
     expect(merge([2, 3, 4], [5, 6])).toEqual([2, 3, 4, 5, 6]);
     expect(merge([4, 6], [2, 3, 5])).toEqual([2, 3, 4, 5, 6]);
+  });
+});
+describe("MergeSort function", function() {
+  it("handles empty array", function() {
+    expect(mergeSort([])).toEqual([]);
+  });
+  it("handles 1 element array", function() {
+    expect(mergeSort([1])).toEqual([1]);
+  });
+  it("handles sorted 2 element array", function() {
+    expect(mergeSort([1, 2])).toEqual([1, 2]);
+  });
+  it("handles unsorted 2 element array", function() {
+    expect(mergeSort([2, 1])).toEqual([1, 2]);
+  });
+  it("handles sorted 3 element array", function() {
+    expect(mergeSort([1, 2, 3])).toEqual([1, 2, 3]);
+  });
+  it("handles unsorted 3 element array", function() {
+    expect(mergeSort([2, 3, 1])).toEqual([1, 2, 3]);
+  });
+  it("handles an unsorted array with odd number of elements", function() {
+    expect(mergeSort([5, 3, 4, 1, 2])).toEqual([1, 2, 3, 4, 5]);
+  });
+  it("handles an unsorted array with even number of elements", function() {
+    expect(mergeSort([5, 3, 4, 1, 2, 19])).toEqual([1, 2, 3, 4, 5, 19]);
   });
 
 });
